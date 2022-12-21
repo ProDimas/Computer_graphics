@@ -32,7 +32,7 @@ def transform(pixels: list[tuple[int]]) -> list[tuple[int]]:
         pixel_transformed = np.matmul(pixel, transform_matrix)
         rounded_pixels = [(f1(pixel_transformed[0]), f2(pixel_transformed[1])) for f1, f2 in funcs]
         new_pixels += rounded_pixels
-    return new_pixels
+    return list(set(new_pixels))
 
 def get_transform_matrix() -> np.ndarray:
     return np.array([[cos(θ), sin(θ), 0],
