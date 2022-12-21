@@ -11,7 +11,7 @@ ROT_CENTER = (480, 480)
 LAST_DIGIT_OF_LOGIN = 7
 θ = radians(-10 * (LAST_DIGIT_OF_LOGIN + 1))
 
-def read_ds7_data() -> list[str]:
+def read_ds7_data() -> list[tuple[int]]:
     data = []
     ds7 = open(os.path.dirname(__file__) + '/DS7.txt', 'r')
     for line in ds7:
